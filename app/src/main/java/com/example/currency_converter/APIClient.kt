@@ -13,7 +13,7 @@ class APIClient {
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
         retrofit = Retrofit.Builder()
-            .baseUrl("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/")
+            .baseUrl(constants.baseurl)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
